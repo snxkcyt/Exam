@@ -170,4 +170,14 @@
     <servlet-name>Subject</servlet-name>
     <url-pattern>/Subject</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SubjectUpdatFromAction</display-name>
+    <servlet-name>SubjectUpdatFromAction</servlet-name>
+    <servlet-class>subject.SubjectUpdatFromAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubjectUpdatFromAction</servlet-name>
+    <url-pattern>/SubjectUpdatFromAction</url-pattern>
+  </servlet-mapping>
 </web-app>

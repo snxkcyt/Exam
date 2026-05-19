@@ -1,8 +1,8 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html" %>
+<%@include file="../include.jsp" %>
 
-${teacher.id}
+${teacher.name}様 (ID: ${teacher.id})
 <p>ログアウトしますか？</p>
 <p><a href="Logout.action">ログアウト</a></p>
 
-<%@include file="../footer.html" %>
+<%@include file="../footer.jsp" %>

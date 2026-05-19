@@ -1,40 +1,48 @@
 package dao;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
-/**
- * Servlet implementation class SubjectDAO
- */
-public class SubjectDAO extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SubjectDAO() {
-        super();
-        // TODO Auto-generated constructor stub
+import bean.Subject;
+
+public class SubjectDAO extends DAO {
+	
+	// 変更
+    public int update(Subject subject) throws Exception {
+        Connection con=getConnection();
+
+        PreparedStatement st=con.prepareStatement(
+            "UPDATE subject SET school_cd = ? name = ? WHERE cd = ?;");
+        
+        st.setString(1, subject.getSchool());
+        st.setString(2, subject.getName());
+        st.setString(3, subject.getCd());
+        
+        int line=st.executeUpdate();
+
+        st.close();
+        con.close();
+        return line;
+    	
+    	
     }
+	
+    // 削除
+    public int delete(Subject subject) throws Exception {
+        
+        String sql = "DELETE FROM subject WHERE cd = ?";
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
+        try (Connection con = getConnection();
+             PreparedStatement st = con.prepareStatement(sql)) {
+            
+           st.setString(1, subject.getCd());
+           
+           return st.executeUpdate();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+		return 0;
+       
+    }
 }

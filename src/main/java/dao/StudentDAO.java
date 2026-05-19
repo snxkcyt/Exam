@@ -90,7 +90,7 @@ public class StudentDAO extends DAO {
 		// リストを初期化
 		List<Student> list = new ArrayList<>();
 		// SQL文の条件
-		String conditions = " and ent_year = ?";
+		String conditions = " and ent_year = ? ";
 		String order = " order by no asc";
 		// SQL文を在学フラグ
 		String conditionIsAttend = "";
@@ -134,7 +134,7 @@ public class StudentDAO extends DAO {
 		String conditionIsAttend = "";
 		// 在学フラグがtrueの場合
 		if (isAttend) {
-			conditionIsAttend = "and is_attend = true";
+			conditionIsAttend = "and is_attend = true ";
 		}
 		Connection con=getConnection();
 		// プリペアードステートメントにSQL文をセット
@@ -172,7 +172,7 @@ public class StudentDAO extends DAO {
         st.setInt(3, student.getEntYear());
         st.setString(4, student.getClassNum());
         st.setBoolean(5, student.isAttend());
-        st.setString(6, student.getSchool()); //ログイン中TEACHERの学校コードを取得]);
+        st.setString(6, student.getSchool()); //ログイン中TEACHERの学校コードを取得;
         int line=st.executeUpdate();
 
         st.close();
@@ -197,7 +197,7 @@ public class StudentDAO extends DAO {
         st.setBoolean(3, student.isAttend());
         st.setString(4, student.getSchool());
 
-        st.setString(5, student.getNo()); // ← ここ重要
+        st.setString(5, student.getNo());
         
         int line=st.executeUpdate();
 

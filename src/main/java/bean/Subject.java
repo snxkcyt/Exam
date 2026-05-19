@@ -1,40 +1,31 @@
 package bean;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
+public class Subject implements java.io.Serializable {
 
-/**
- * Servlet implementation class Subject
- */
-public class Subject extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Subject() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	private String cd;
+	private String name;
+	private String school;
+	
+	public String getCd() {
+		return cd;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public String getSchool() {
+		return school;
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	public void setName(String name) {
+		this.name = name;
 	}
-
+	public void setCd(String cd) {
+		this.cd = cd;
+	}
+	
+	public void setSchool(String school) {
+		this.school = school;
+	}
 }

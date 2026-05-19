@@ -16,7 +16,7 @@ public class StudentCreateAction extends Action {
 	    HttpSession session = request.getSession();
 	    Teacher teacher = (Teacher) session.getAttribute("teacher");
 
-	    // パラメータ取得
+	    // いろいろ取得
 	    String no = request.getParameter("no");
 	    String name = request.getParameter("name");
 
@@ -33,13 +33,14 @@ public class StudentCreateAction extends Action {
 	    // 在学中，チェックされていればtrue，されてなければnull
 	    boolean isAttend = request.getParameter("is_attend") != null;
 
-	    // Student にセット
+	    // Studentにセット
 	    Student student = new Student();
 	    student.setNo(no);
 	    student.setName(name);
 	    student.setEntYear(ent_year);
 	    student.setClassNum(classNum);
 	    student.setAttend(isAttend);
+	    student.setSchool(teacher.getSchool());
 
 	    // DAOで登録
 	    StudentDAO dao = new StudentDAO();

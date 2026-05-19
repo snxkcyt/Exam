@@ -1,40 +1,27 @@
 package subject;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
+import bean.Subject;
+import dao.SubjectDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import tool.Action;
 
-/**
- * Servlet implementation class SubjectUpdateAction
- */
-public class SubjectUpdateAction extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SubjectUpdateAction() {
-        super();
-        // TODO Auto-generated constructor stub
+public class SubjectDeleteAction extends Action {
+
+    public void execute(HttpServletRequest request,
+                        HttpServletResponse response) throws Exception {
+
+        String cd = request.getParameter("cd");
+
+        if (cd != null) {
+
+            Subject subject = new Subject();
+            subject.setCd(cd);
+
+            SubjectDAO dao = new SubjectDAO();
+            dao.delete(subject);
+        }
+
+        response.sendRedirect("SubjectList.action");
     }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }

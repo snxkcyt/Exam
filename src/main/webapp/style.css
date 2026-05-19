@@ -1,0 +1,193 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+	text-align: right;
+}
+
+.side {
+  width:200px;
+  margin:10px;
+  padding:10px 30px;
+    border-right: 1px solid rgb(192, 192, 192);
+} 
+
+.content {
+  flex: 1;
+  margin:10px;
+  padding:10px;
+}
+
+h1 {
+	margin-bottom: 0; }
+
+h2 {
+	background-color: rgb(231, 231, 231);
+	margin-top: 5px;
+  	padding:10px;
+}
+
+.login {
+	width: 70%;
+	border: 1px solid #969da3;
+	border-radius: 10px;
+	margin: auto;
+	padding:0;
+}
+
+.loginh2 {
+	text-align: center;
+}
+
+.loginbox {
+	padding: 0 25px;
+}
+
+
+article {
+  display:flex;/*横並びにする*/
+}
+
+.headerbox {
+	margin: 20px;
+	padding: 1px 20px 20px 20px;
+	background-color: rgb(204, 255, 255);
+}
+
+span {
+	  text-align:right;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin: 10px 0;
+}
+
+.stu {
+	width:10em;
+	text-align:center;
+	background-color: rgb(255, 206, 206);
+	margin:10px;
+  	padding:10px;
+}
+
+.test {
+	width:10em;
+	text-align:center;
+	background-color: rgb(211, 255, 206);
+	margin:10px;
+  	padding:10px;
+  	line-height: 2; 
+}
+
+.sub {
+	width:10em;
+	text-align:center;
+	background-color: rgb(206, 220, 255);
+	margin:10px;
+  	padding:10px;
+}
+
+.box_flex {
+	display:flex;
+}
+
+button {
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: rgb(128, 128, 255);
+  color: rgb(255, 255, 255);
+  padding: 8px 16px;
+  margin: auto 10px;
+  font-size: 16px;
+  height: 3em;
+}
+
+.checkbox {
+	margin: auto 10px;
+}
+
+.textbox {
+    color: #333;
+    width: 100%;
+    padding: 8px 10px;
+    margin: 10px 0px;
+    border: 1px solid #969da3;
+    border-radius: 3px;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.textbox2 {
+    color: #333;
+    width: 100%;
+    padding: 8px 10px;
+    margin: 10px 0px;
+    border: 1px solid #969da3;
+    border-radius: 3px;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.box2 {
+	border: 1px solid #969da3;
+	border-radius: 10px;
+	margin: 15px 0;
+	padding:10px 10px 20px 5px;
+}
+
+.SearchBox {
+	flex: 1 30%;
+    margin: 0 10px;
+}
+
+label {
+	margin-top:5px;
+}
+
+footer {
+    bottom: 0; /*下に固定*/
+	width: 99%;
+	background-color:rgb(222, 222, 222);
+	color:rgb(89, 89, 89);
+	text-align:center;
+	margin-top:50px;
+	margin-bottom: 10px;
+  	padding:5px;
+}
+
+table, td, th {
+    border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+table {
+    border-collapse: collapse;
+	width: 100%;
+	line-height: 2.2em;
+	margin: 10px 0px;
+}
+
+th {
+	text-align: left;
+	padding: 5px;
+}
+
+td {
+	padding: 5px;
+}
+
+.attend {
+	width: 10%;
+	text-align: center;
+}

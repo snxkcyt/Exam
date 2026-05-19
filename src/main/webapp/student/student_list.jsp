@@ -1,38 +1,46 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<%@ include file="../include.jsp" %>
 <!DOCTYPE html>
 <html>
 <head><title>学生一覧</title></head>
 <body>
 <h2>学生管理</h2>
-<hr><div>
-<p><a href="StudentCreateForm.action">新規登録</a></p>
+<div class="right">
+<a href="StudentCreateForm.action">新規登録</a>
 </div>
 
-<form method="get">
-	<label>入学年度</label>
-	<select name="f1">
+<form method="get" class="box2">
+
+<div class="box_flex">
+	<div class="SearchBox">
+	<label>入学年度</label><br>
+	<select name="f1"  class="textbox2">
 		<option value="">---</option>
 		<option value="2023">2023</option>
 		<option value="2024">2024</option>
 		<option value="2025">2025</option>
 	</select>
+	</div>
 	
-	<label>クラス</label>
-	<select name="f2">
+	<div class="SearchBox">
+	<label>クラス</label><br>
+	<select name="f2"  class="textbox2">
 		<option value="0">---</option>
 			<c:forEach var="num" items="${classnum}">
 				<option value="${num}">${num}</option>
 			</c:forEach>
 	</select>
-	
-	<label>在学中</label>
-	<input type="checkbox" name="f3">
+	</div>
+
+	<label class="checkbox"><input type="checkbox" name="f3">
+	在学中</label>
 	<button>絞込み</button>
 	<div>${errors.get("f1")}</div>
 
+</div>
 </form>
-<br>
 
 <c:choose>
     <c:when test="${list.size()>0 }">
@@ -43,8 +51,7 @@
                     <th>学生番号</th>
                     <th>氏名</th>
                     <th>クラス</th>
-                    <th>在学中</th>
-                    <th></th>
+                    <th class="attend">在学中</th>
                     <th></th>
                 </tr>
                 <c:forEach var="s" items="${list}">
@@ -53,7 +60,7 @@
                         <td>${s.no}</td>
                         <td>${s.name}</td>
                         <td>${s.classNum}</td>
-                        <td>
+                        <td class="attend">
                         <c:choose>
                             <c:when test="${s.attend}">
                                 ◯
@@ -75,7 +82,8 @@
 </table>
 
 <br>
-<a href="../auth/LoginExecute.action">メニューへ</a>
+<a href="http://localhost:8080/scoremanager/menu.jsp">メニューへ</a>
 
 </body>
 </html>
+<%@ include file="../footer.jsp" %>

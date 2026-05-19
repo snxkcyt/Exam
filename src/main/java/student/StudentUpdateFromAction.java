@@ -22,7 +22,7 @@ public class StudentUpdateFromAction extends Action {
 		String no = request.getParameter("no");
 
 		StudentDAO dao = new StudentDAO();
-		Student student = dao.get(no);  // ← これが無いと全部空
+		Student student = dao.get(no);
 
 
         ClassNumDAO classNumDAO = new ClassNumDAO();

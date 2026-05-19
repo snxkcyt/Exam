@@ -1,40 +1,39 @@
 package subject;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
+import bean.Subject;
+import dao.SubjectDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import tool.Action;
 
-/**
- * Servlet implementation class SubjectUpdateAction
- */
-public class SubjectUpdateAction extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SubjectUpdateAction() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+public class SubjectUpdateAction extends Action {
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+	    String name = request.getParameter("name");
+
+	    String cd = request.getParameter("cd");
+	    
+	    String school = request.getParameter("school");
+
+
+	    // Studentにセット
+	    Subject subject = new Subject();
+	    subject.setCd(cd);
+	    subject.setName(name);
+	    subject.setSchool(school);
+
+	    // DAOで登録
+	    SubjectDAO dao = new SubjectDAO();
+	    int count = dao.update(subject);
+
+	    if (count > 0) {
+	        request.getRequestDispatcher("subject_update_done.jsp")
+	               .forward(request, response);
+	    } else {
+	        request.setAttribute("message", "更新失敗");
+	        request.getRequestDispatcher("subject_update.jsp")
+	               .forward(request, response);
+	    }
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }
