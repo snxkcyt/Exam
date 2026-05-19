@@ -17,7 +17,7 @@
 <div class="test">
 成績管理<br>
 <a href="#">成績登録</a><br>
-<a href="#">成績参照</a>
+<a href="http://localhost:8080/scoremanager/test/TestList.action">成績参照</a>
 </div>
 
 <div class="sub">

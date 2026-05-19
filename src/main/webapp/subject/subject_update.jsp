@@ -1,10 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<%@ include file="../include.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>科目管理</title>
 </head>
 <body>
 
@@ -12,10 +14,10 @@
 
 <form action="SubjectUpdate.action" method="post">
 <label>科目コード</label><br>
-<input type="text" name="cd" value="${cd}">（初期値　科目コード）<br>
+<p>　${cd}(ここに科目コード)</p><br>
 
 <label>科目名</label><br>
-<input type="text" name="name" value="${name}" placeholder="科目名を入力してください">（初期値　科目名）<br><br>
+<input type="text" name="name" value="${name}" placeholder="科目名を入力してください"  class="textbox"><br><br>
 
 <button name="submit">変更</button><br><br>
 
@@ -23,3 +25,4 @@
 
 </body>
 </html>
+<%@ include file="../footer.jsp" %>

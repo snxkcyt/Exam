@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+	background-color: rgb(231, 231, 231);
+	margin-top: 5px;
+  	padding:10px;
+}
+
+
+/* 検索エリア */
+.search-box {
+    background: #fff;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* セクション */
+.section {
+    margin-bottom: 20px;
+}
+
+.section-header {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* 横並び（最重要） */
+.row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 入力系 */
+select, input {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* ボタン */
+button {
+    background: #6c7680;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* テーブル */
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.result-table th {
+    background: #eeeeee;
+}
+
+.result-table th,
+.result-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}

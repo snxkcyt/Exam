@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>学生管理</title>
 </head>
 <body>
 
@@ -20,3 +20,4 @@
 
 </body>
 </html>
+<%@ include file="../footer.jsp" %>
