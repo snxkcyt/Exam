@@ -36,10 +36,11 @@
 
 	<label class="checkbox"><input type="checkbox" name="f3">
 	在学中</label>
-	<button>絞込み</button>
+	<button>絞込み</button></div>
+	
 	<div>${errors.get("f1")}</div>
 
-</div>
+
 </form>
 
 <c:choose>
