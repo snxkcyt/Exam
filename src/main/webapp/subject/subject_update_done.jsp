@@ -13,7 +13,7 @@
 <h2>科目情報変更</h2>
 <label>変更が完了しました</label>
 
-<a href="#">科目一覧</a>
+<a href="http://localhost:8080/scoremanager/subject/SubjectList.action">科目一覧</a>
 </body>
 </html>
 <%@ include file="../footer.jsp" %>

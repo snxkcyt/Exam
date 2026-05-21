@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" type="text/css" href="style.css">
 <%@ include file="../include.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,10 +11,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>科目情報削除</h2>
-<label>削除が完了しました</label>
 
-<a href="http://localhost:8080/scoremanager/subject/SubjectList.action">科目一覧</a>
+<h2>科目情報登録</h2>
+<p>登録が完了しました。</p>
+
+<a href="SubjectCreate.action">戻る</a>
+<a href="SubjectList.action">科目一覧</a>
+
 </body>
 </html>
+
 <%@ include file="../footer.jsp" %>

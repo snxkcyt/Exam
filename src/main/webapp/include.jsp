@@ -29,7 +29,7 @@
             <li class="label">成績管理</li>
             <li>　<a href="#">成績登録</a></li>
             <li>　<a href="http://localhost:8080/scoremanager/test/TestList.action">成績参照</a></li>
-            <li><a href="#">科目管理</a></li>
+            <li><a href="http://localhost:8080/scoremanager/subject/SubjectList.action">科目管理</a></li>
         </ul>
     </nav>
 </div>

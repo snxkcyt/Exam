@@ -22,6 +22,6 @@ public class SubjectDeleteAction extends Action {
             dao.delete(subject);
         }
 
-        response.sendRedirect("SubjectList.action");
+        response.sendRedirect("subject_delete_done.jsp");
     }
 }

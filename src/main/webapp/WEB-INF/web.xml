@@ -180,4 +180,24 @@
     <servlet-name>SubjectUpdatFromAction</servlet-name>
     <url-pattern>/SubjectUpdatFromAction</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SubjectUpdateFromAction</display-name>
+    <servlet-name>SubjectUpdateFromAction</servlet-name>
+    <servlet-class>subject.SubjectUpdateFromAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubjectUpdateFromAction</servlet-name>
+    <url-pattern>/SubjectUpdateFromAction</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SubjectDeleteFrom</display-name>
+    <servlet-name>SubjectDeleteFrom</servlet-name>
+    <servlet-class>subject.SubjectDeleteFrom</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubjectDeleteFrom</servlet-name>
+    <url-pattern>/SubjectDeleteFrom</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -80,5 +80,48 @@ public class SubjectDAO extends DAO {
 	public boolean save(ClassNum classNum,String newClassNum) throws Exception {
 		return false;		
 	}	
+	
+	//これだけ追加
+	public int insert(Subject subject) throws Exception {
+        Connection con=getConnection();
+
+        PreparedStatement st=con.prepareStatement(
+            "insert into subject(school_cd, cd, name) values(?, ?, ?)");
+        st.setString(1, subject.getSchool());
+        st.setString(2, subject.getCd());
+        st.setString(3, subject.getName()); //ログイン中TEACHERの学校コードを取得;
+        int line=st.executeUpdate();
+
+        st.close();
+        con.close();
+        return line;
+    }
+
+	public Subject get(String cd) throws Exception {
+	    Connection con = getConnection();
+
+	    PreparedStatement st = con.prepareStatement(
+	        "SELECT * FROM subject WHERE cd = ?"
+	    );
+	    st.setString(1, cd);
+
+	    ResultSet rs = st.executeQuery();
+
+	    Subject subject = null;
+
+	    if (rs.next()) {
+	        subject = new Subject();
+	        subject.setCd(rs.getString("cd"));
+	        subject.setName(rs.getString("name"));
+	        subject.setSchool(rs.getString("school_cd"));
+	    }
+
+	    rs.close();
+	    st.close();
+	    con.close();
+
+	    return subject;
+	}
+
 
 }

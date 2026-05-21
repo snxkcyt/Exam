@@ -13,10 +13,13 @@
 
 <form action="SubjectDelete.action" method="post">
 <h2>科目情報削除</h2>
-<p>「${subject_name}(${subject_cd})」を削除してもよろしいですか</p>
+
+<input type="hidden" name="cd" value="${subject.cd}">
+
+<p>「${subject.name}(${subject.cd})」を削除してもよろしいですか</p>
 <button name="submit">削除</button>
-<br>
-<a href="#">戻る</a>（科目管理一覧へ）
+<br><br>
+<a href="http://localhost:8080/scoremanager/subject/SubjectList.action">戻る</a>
 </body>
 </html>
 <%@ include file="../footer.jsp" %>
