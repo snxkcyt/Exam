@@ -22,7 +22,6 @@
 <label>科目名</label><br>
 <input type="text" name="name" value="${subject.name}" class="textbox"><br><br>
 
-<br><br>
 <button type="submit">変更</button>
 
 </form>

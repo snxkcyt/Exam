@@ -15,11 +15,11 @@ public class SubjectDeleteFromAction extends Action {
         HttpSession session = request.getSession();
         Teacher teacher = (Teacher) session.getAttribute("teacher");
 
-        // 更新する科目コードを取得
+        // 削除する科目コードを取得
         String cd = request.getParameter("cd");
 
         SubjectDAO dao = new SubjectDAO();
-        Subject subject = dao.get(cd);   // ← 科目を1件取得するメソッドが必要
+        Subject subject = dao.get(cd);
 
         request.setAttribute("subject", subject);
 
